@@ -18,4 +18,4 @@ def strip_file(file_name):
 	open_beginning_sentence_re = re.compile(open_beginning_sentence_arg)
 	re_occurrences_new = open_beginning_sentence_re.findall(file_contents)
 	print(re_occurrences_new)
-
+	print("test")

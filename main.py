@@ -58,4 +58,5 @@ print(classes[choice] + " chosen.")
 level_choice = select_level()
 
 print(str(level_choice) + "selected.")
+#get_sentences("Sorcerer")
 strip_file("Sorcerer")

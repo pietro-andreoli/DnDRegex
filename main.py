@@ -1,4 +1,6 @@
 from regex import *
+
+
 def print_class_intro():
     with open("ClassIntro.txt", 'r') as intro:
         print(intro.read())
@@ -29,8 +31,6 @@ def select_level():
     return lvl_choice
 
 
-
-
 num_classes = 0
 classes = []
 choice = -1
@@ -47,16 +47,20 @@ while True:
         print("Invalid input. Please select a number between 0 and " + str(num_classes) + ".")
         print_class_intro()
         continue
-    if 0 <= choice <= num_classes-1:
+    if 0 <= choice <= num_classes - 1:
         break
     else:
         print("Invalid input. Please select a number between 0 and " + str(num_classes) + ".")
         print_class_intro()
 
-print(classes[choice] + " chosen.")
 
 level_choice = select_level()
-
+print(classes[choice] + " chosen.")
 print(str(level_choice) + "selected.")
-#get_sentences("Sorcerer")
-strip_file("Sorcerer")
+stripped_file_name = strip_file("Sorcerer.html")
+results, result_file_name = get_sentences(stripped_file_name)
+with open(result_file_name, 'w') as file:
+    for sentence in results:
+        file.write(sentence + "\n")
+
+
